@@ -40,3 +40,13 @@ export function getMovieLists() {
     }, 2000);
   })
 }
+
+export const getMovieById = (id) => {
+
+  return new Promise((resolve, reject) => {
+    const movieIndex = moviesData.findIndex(m => m.id === id)
+    const movie = moviesData[movieIndex]
+
+    setTimeout(() => resolve(movie), 50)
+  })
+}
