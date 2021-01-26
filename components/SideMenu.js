@@ -1,17 +1,12 @@
-const SideMenu = () => {
+const SideMenu = ({categories=[]}) => {
   return (
     <div>
       <h1 className='my-4'>Shop Name</h1>
       <div className='list-group'>
-        <a href='#' className='list-group-item'>
-          Category 1
+       {categories.map((category)=> <a id={category.id} href='#' className='list-group-item'>
+          {category.name}
         </a>
-        <a href='#' className='list-group-item'>
-          Category 2
-        </a>
-        <a href='#' className='list-group-item'>
-          Category 3
-        </a>
+       )}
       </div>
     </div>
   )
