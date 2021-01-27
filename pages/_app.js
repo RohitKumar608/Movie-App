@@ -1,9 +1,10 @@
+
 import App from 'next/app'
 import Head from 'next/head'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
-import '../styles/index.scss'
 
+import '../styles/index.scss'
 
 class MovieApp extends App {
 

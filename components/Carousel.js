@@ -1,10 +1,18 @@
-const Carousel = ({images}) => {
+
+
+
+const Carousel = (props) => {
+
+  const { images } = props
+
+
+
   return (
     <div id="carouselExampleIndicators" className="carousel slide my-4" data-ride="carousel">
       <ol className="carousel-indicators">
         { images.map((image, index) => (
             <li
-              key={index}
+              key={image.id}
               data-target="#carouselExampleIndicators"
               data-slide-to={index}
               className={index === 0 ? 'active' : ''}>
@@ -15,9 +23,8 @@ const Carousel = ({images}) => {
       </ol>
       <div className="carousel-inner" role="listbox">
         { images.map((image, index) => (
-            <div className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+            <div key={image.id} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
               <img
-                key={index}
                 className="d-block img-fluid"
                 src={image.url}
                 alt={image.name} />
@@ -36,7 +43,7 @@ const Carousel = ({images}) => {
       </a>
       <style jsx>{`
         .carousel-item {
-          max-height: 300px;
+          max-height: 400px;
         }
       `}
       </style>
@@ -45,3 +52,5 @@ const Carousel = ({images}) => {
 }
 
 export default Carousel
+
+
